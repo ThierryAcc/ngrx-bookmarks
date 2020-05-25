@@ -1,0 +1,27 @@
+<h3>Bookmarks</h3>
+<table class="table table-hover">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Name</th>
+      <th scope="col">Url</th>
+      <th scope="col">Group</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">
+        {{ error }}
+      </td>
+    </tr>
+    <tr></tr>
+    <tr *ngFor="let bookmark of bookmarks$ | async">
+      <th scope="row">{{ bookmark.name }}</th>
+      <td>{{ bookmark.url }}</td>
+      <td>{{ bookmark.group }}</td>
+      <th>
+        <a (click)="deleteBookmark(bookmark)">delete</a>
+      </th>
+    </tr>
+  </tbody>
+</table>

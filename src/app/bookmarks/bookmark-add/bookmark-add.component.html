@@ -1,0 +1,29 @@
+<h3>Add Bookmark</h3>
+
+<form [formGroup]="bookmarkForm" (submit)="createBookmark()" class="form-inline mb-4">
+  <label class="sr-only" for="Name">Name</label>
+  <div class="input-group mb-2 mr-sm-2">
+    <input type="text" class="form-control" formControlName="name" placeholder="name" />
+  </div>
+
+  <label class="sr-only" for="Url">Url</label>
+  <div class="input-group mb-2 mr-sm-2">
+    <input type="text" class="form-control" formControlName="url" placeholder="url" />
+  </div>
+
+  <label class="sr-only" for="group">Group</label>
+  <div class="input-group mb-2 mr-sm-2">
+    <select formControlName="group" class="form-control">
+      <option>Work</option>
+      <option>Leisure</option>
+      <option>Personal</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Add Bookmark</button>
+</form>
+
+<tr>
+  <td colspan="5" class="alert alert-danger" *ngIf="error">
+    {{ error }}
+  </td>
+</tr>
