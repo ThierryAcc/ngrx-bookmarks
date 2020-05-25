@@ -35,14 +35,22 @@ export class BookmarkAddComponent implements OnInit {
       group: this.bookmarkForm.get("group").value,
     };
 
-    if (newBookmark.name && newBookmark.url && newBookmark.group) {
+    var regex = new RegExp("^(http|https)://", "i");
+    var validUrl = regex.test(newBookmark.url);
+    console.log(validUrl);
+
+    if (!newBookmark.name && !validUrl && !newBookmark.group) {
+      this.error = "Please fill out the form."
+    }
+    else if (!validUrl) {
+      this.error = "Url has to start with http:// or https://";
+    }
+    else {
       this.error = "";
       this.store.dispatch(new bookmarkActions.CreateBookmark(newBookmark));
-    } else {
-      this.error = "Fill out the form"
+      this.bookmarkForm.reset();
     }
 
 
-    this.bookmarkForm.reset();
   }
 }
