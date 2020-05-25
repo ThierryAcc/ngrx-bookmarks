@@ -1,27 +1,19 @@
-<h3>Bookmarks</h3>
-<table class="table table-hover">
-  <thead>
-    <tr class="table-primary">
-      <th scope="col">Name</th>
-      <th scope="col">Url</th>
-      <th scope="col">Group</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">
-        {{ error }}
-      </td>
-    </tr>
-    <tr></tr>
-    <tr *ngFor="let bookmark of bookmarks$ | async">
-      <th scope="row">{{ bookmark.name }}</th>
-      <td>{{ bookmark.url }}</td>
-      <td>{{ bookmark.group }}</td>
-      <th>
-        <a (click)="deleteBookmark(bookmark)">delete</a>
-      </th>
-    </tr>
-  </tbody>
+<table mat-table [dataSource]="bookmarks$ | async" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let bookmark"> {{bookmark.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="url">
+    <th mat-header-cell *matHeaderCellDef> Url </th>
+    <td mat-cell *matCellDef="let bookmark"> {{bookmark.url}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="group">
+    <th mat-header-cell *matHeaderCellDef> Group </th>
+    <td mat-cell *matCellDef="let bookmark"> {{bookmark.group}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr (click)="deleteBookmark(bookmark)" mat-row *matRowDef="let bookmark; columns: ['name', 'url', 'group']"></tr>
 </table>

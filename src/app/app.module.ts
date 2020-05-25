@@ -9,6 +9,18 @@ import { HomeComponent } from "./home/home.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { EffectsModule } from "@ngrx/effects";
 import { HttpClientModule } from "@angular/common/http";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import {
+  MatTableModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule,
+  MatButtonModule,
+} from "@angular/material";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavbarComponent],
@@ -19,6 +31,16 @@ import { HttpClientModule } from "@angular/common/http";
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
     HttpClientModule,
+    NoopAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

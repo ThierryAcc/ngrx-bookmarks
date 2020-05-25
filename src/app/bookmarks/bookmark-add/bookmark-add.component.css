@@ -1,0 +1,10 @@
+.bookmark-add-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.mat-stroked-button {
+  width: 127px;
+  height: 52px;
+  bottom: 10px;
+  margin-left: 20px;
+}

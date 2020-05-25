@@ -23,7 +23,6 @@ export class BookmarkAddComponent implements OnInit {
     this.bookmarkForm = this.fb.group({
       name: ["", Validators.required],
       url: ["", Validators.required],
-      address: ["", Validators.required],
       group: ["", Validators.required],
     });
   }
@@ -37,8 +36,7 @@ export class BookmarkAddComponent implements OnInit {
 
     var regex = new RegExp("^(http|https)://", "i");
     var validUrl = regex.test(newBookmark.url);
-    console.log(validUrl);
-
+    console.log(validUrl)
     if (!newBookmark.name && !validUrl && !newBookmark.group) {
       this.error = "Please fill out the form."
     }

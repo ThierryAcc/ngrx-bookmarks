@@ -1,12 +1,6 @@
 {
   "bookmarks": [
     {
-      "name": "Google",
-      "url": "http://google.ch",
-      "group": "Work",
-      "id": 1
-    },
-    {
       "name": "Amazon",
       "url": "http://amazon.de",
       "group": "Leisure",
@@ -14,21 +8,33 @@
     },
     {
       "name": "test",
-      "url": "test",
-      "group": "Leisure",
-      "id": 3
+      "url": "http://test",
+      "group": "Personal",
+      "id": 6
     },
     {
-      "name": "abc",
-      "url": "abc",
-      "group": "Leisure",
-      "id": 4
+      "name": "test2",
+      "url": "http://test2",
+      "group": "Personal",
+      "id": 8
     },
     {
       "name": "test",
       "url": "http://test",
-      "group": "Work",
-      "id": 7
+      "group": "Leisure",
+      "id": 9
+    },
+    {
+      "name": "test",
+      "url": "http://test",
+      "group": "Leisure",
+      "id": 10
+    },
+    {
+      "name": "test",
+      "url": "http://test",
+      "group": "Leisure",
+      "id": 11
     }
   ]
 }

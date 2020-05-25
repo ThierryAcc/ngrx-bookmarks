@@ -1,11 +1,13 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 
 import { Store, select } from "@ngrx/store";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 
 import * as bookmarkActions from "../state/bookmark.actions";
 import * as fromBookmark from "../state/bookmark.reducer";
 import { Bookmark } from "../bookmark.model";
+import { MatTableDataSource, MatSort } from '@angular/material';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: "app-bookmark-list",
@@ -15,6 +17,9 @@ import { Bookmark } from "../bookmark.model";
 export class BookmarkListComponent implements OnInit {
   bookmarks$: Observable<Bookmark[]>;
   error$: Observable<String>;
+  dataSource = of(this.bookmarks$).pipe(delay(1000))
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  displayedColumns: string[] = ['name', 'url', 'group'];
 
   constructor(private store: Store<fromBookmark.AppState>) { }
 
