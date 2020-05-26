@@ -20,10 +20,13 @@ import {
   MatSidenavModule,
   MatListModule,
   MatButtonModule,
+  MatDialogModule,
 } from "@angular/material";
+import { DialogComponent } from "./dialog/dialog.component";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, DialogComponent],
+  entryComponents: [DialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,6 +44,7 @@ import {
     MatTableModule,
     MatInputModule,
     MatSelectModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

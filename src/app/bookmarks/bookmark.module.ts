@@ -11,7 +11,14 @@ import { BookmarkEffect } from "./state/bookmark.effects";
 import { BookmarkComponent } from "./bookmark/bookmark.component";
 import { BookmarkAddComponent } from "./bookmark-add/bookmark-add.component";
 import { BookmarkListComponent } from "./bookmark-list/bookmark-list.component";
-import { MatButtonModule, MatTableModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material/';
+import {
+  MatButtonModule,
+  MatTableModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatDialogModule,
+} from "@angular/material/";
 const bookmarkRoutes: Routes = [{ path: "", component: BookmarkComponent }];
 
 @NgModule({
@@ -26,7 +33,8 @@ const bookmarkRoutes: Routes = [{ path: "", component: BookmarkComponent }];
     MatInputModule,
     MatSelectModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
   ],
   declarations: [
     BookmarkComponent,
@@ -34,4 +42,4 @@ const bookmarkRoutes: Routes = [{ path: "", component: BookmarkComponent }];
     BookmarkListComponent,
   ],
 })
-export class BookmarksModule { }
+export class BookmarksModule {}

@@ -1,3 +1,11 @@
 .expand-lg {
-    margin-bottom: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.navbar {
+  cursor: pointer;
+}
+
+.navbar:focus {
+  outline: 0px;
 }

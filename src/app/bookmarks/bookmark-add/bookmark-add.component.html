@@ -1,30 +1,42 @@
 <h3>Add Bookmark</h3>
 
 <div class="bookmark-add-container">
-  <form [formGroup]="bookmarkForm" (submit)="createBookmark()" class="form-inline mb-4">
-    <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
-      <input matInput formControlName="name" placeholder="Name" required>
+  <form
+    [formGroup]="bookmarkForm"
+    (submit)="createBookmark()"
+    class="form-inline mb-4"
+  >
+    <mat-form-field appearance="standard" required>
+      <mat-label>Name *</mat-label>
+      <input matInput formControlName="name" placeholder="Name" />
+      <mat-error *ngIf="bookmarkForm.controls['name'].errors?.required"
+        >Mandatory Field</mat-error
+      >
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Url</mat-label>
-      <input matInput formControlName="url" placeholder="Url" required>
+    <mat-form-field appearance="standard" required>
+      <mat-label>Url *</mat-label>
+      <input matInput formControlName="url" placeholder="Url" />
+      <mat-error *ngIf="bookmarkForm.controls['url'].errors?.pattern"
+        >Needs to start with http:// or https://</mat-error
+      >
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-select formControlName="group" required>
+    <mat-form-field appearance="standard" required>
+      <mat-select formControlName="group" placeholder="Work *">
         <mat-option value="Work">Work</mat-option>
         <mat-option value="Leisure">Leisure</mat-option>
         <mat-option value="Personal">Personal</mat-option>
       </mat-select>
+      <mat-error>Mandatory</mat-error>
     </mat-form-field>
-    <button mat-stroked-button type="submit" color="primary">Add Bookmark</button>
-
+    <button
+      mat-stroked-button
+      type="submit"
+      [disabled]="bookmarkForm.invalid"
+      color="primary"
+    >
+      Add Bookmark
+    </button>
   </form>
 </div>
-<tr>
-  <td colspan="2" class="alert alert-danger" * ngIf="error">
-    {{ error }}
-  </td>
-</tr>

@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from "@angular/forms";
 import { Store, State, select } from "@ngrx/store";
 import * as bookmarkActions from "../state/bookmark.actions";
 import * as fromBookmark from "../state/bookmark.reducer";
@@ -12,19 +17,38 @@ import { Bookmark } from "../bookmark.model";
 })
 export class BookmarkAddComponent implements OnInit {
   bookmarkForm: FormGroup;
-  error: string;
 
   constructor(
     private fb: FormBuilder,
     private store: Store<fromBookmark.AppState>
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.bookmarkForm = this.fb.group({
-      name: ["", Validators.required],
-      url: ["", Validators.required],
+      name: ["", [Validators.required]],
+      url: [
+        "http://",
+        [
+          Validators.required,
+          Validators.pattern(new RegExp("^(http|https)://", "i")),
+        ],
+      ],
       group: ["", Validators.required],
     });
+  }
+
+  initializeFormGroup() {
+    this.bookmarkForm.setValue({
+      name: "",
+      url: "http://",
+      group: "Work",
+    });
+  }
+
+  public noWhitespaceValidator(control: FormControl) {
+    const isWhitespace = (control.value || "").trim().length === 0;
+    const isValid = !isWhitespace;
+    return isValid ? null : { whitespace: true };
   }
 
   createBookmark() {
@@ -34,21 +58,8 @@ export class BookmarkAddComponent implements OnInit {
       group: this.bookmarkForm.get("group").value,
     };
 
-    var regex = new RegExp("^(http|https)://", "i");
-    var validUrl = regex.test(newBookmark.url);
-    console.log(validUrl)
-    if (!newBookmark.name && !validUrl && !newBookmark.group) {
-      this.error = "Please fill out the form."
-    }
-    else if (!validUrl) {
-      this.error = "Url has to start with http:// or https://";
-    }
-    else {
-      this.error = "";
-      this.store.dispatch(new bookmarkActions.CreateBookmark(newBookmark));
-      this.bookmarkForm.reset();
-    }
-
-
+    this.store.dispatch(new bookmarkActions.CreateBookmark(newBookmark));
+    this.bookmarkForm.reset();
+    //this.initializeFormGroup();
   }
 }

@@ -1,7 +1,12 @@
 table {
-    width: 100%;
+  width: 100%;
 }
-  
+
 .mat-header-cell {
-font-weight: bold;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.mat-table {
+  margin-bottom: 40px;
 }
