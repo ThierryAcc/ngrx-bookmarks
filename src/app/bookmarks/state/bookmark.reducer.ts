@@ -13,7 +13,6 @@ export interface AppState extends fromRoot.AppState {
   bookmarks: BookmarkState;
 }
 
-// create instance of the entityadapter
 export const bookmarkAdapter: EntityAdapter<Bookmark> = createEntityAdapter<
   Bookmark
 >();

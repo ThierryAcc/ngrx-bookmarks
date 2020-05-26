@@ -7,130 +7,34 @@
       "id": 2
     },
     {
-      "name": "test",
-      "url": "http://test",
-      "group": "Work",
-      "id": 5
-    },
-    {
-      "name": "test",
-      "url": "http://test",
-      "group": "Leisure",
-      "id": 25
-    },
-    {
-      "name": "Name",
-      "url": "http://",
-      "group": "Personal",
-      "id": 27
-    },
-    {
-      "name": "Name",
-      "url": "http://",
-      "group": "Personal",
-      "id": 28
-    },
-    {
-      "name": "thierry",
-      "url": "https://everythingworks.com",
-      "group": "Leisure",
-      "id": 30
-    },
-    {
-      "name": "Name",
-      "url": "http://",
-      "group": "Work",
-      "id": 34
-    },
-    {
-      "name": "test",
-      "url": "http://test",
-      "group": "Leisure",
-      "id": 37
-    },
-    {
-      "name": "asdf",
-      "url": "http://localhost",
-      "group": "Leisure",
-      "id": 38
-    },
-    {
       "name": "Google",
       "url": "http://www.google.ch",
       "group": "Leisure",
       "id": 51
     },
     {
-      "name": "asdf",
-      "url": "http://",
-      "group": "Leisure",
+      "name": "Angular",
+      "url": "http://angular.io",
+      "group": "Work",
       "id": 52
     },
     {
-      "name": "1",
-      "url": "http://",
+      "name": "Youtube",
+      "url": "http://youtube.com",
       "group": "Leisure",
       "id": 53
     },
     {
-      "name": "test",
-      "url": "http://",
-      "group": "Leisure",
-      "id": 55
-    },
-    {
-      "name": "test",
-      "url": "http://",
-      "group": "Leisure",
-      "id": 56
-    },
-    {
-      "name": "asdf",
-      "url": "http://",
-      "group": "Leisure",
-      "id": 57
-    },
-    {
-      "name": "asdf",
-      "url": "http://",
-      "group": "Leisure",
-      "id": 58
-    },
-    {
-      "name": "asdf",
-      "url": "http://",
+      "name": "Github",
+      "url": "http://github.com",
       "group": "Work",
-      "id": 59
+      "id": 54
     },
     {
-      "name": "asdf",
-      "url": "http://",
-      "group": "Leisure",
-      "id": 60
-    },
-    {
-      "name": "test",
-      "url": "http://123",
-      "group": "Leisure",
-      "id": 61
-    },
-    {
-      "name": "test",
-      "url": "http://1",
-      "group": "Leisure",
-      "id": 62
-    },
-    {
-      "name": "test",
-      "url": "http://",
+      "name": "Blick",
+      "url": "http://blick.ch",
       "group": "Personal",
-      "id": 63
-    },
-    {
-      "name": "asdf",
-      "url": "http://",
-      "group": "Leisure",
-      "id": 64
+      "id": 55
     }
   ]
 }

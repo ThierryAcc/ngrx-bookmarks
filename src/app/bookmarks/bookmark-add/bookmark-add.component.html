@@ -1,14 +1,10 @@
 <h3>Add Bookmark</h3>
 
 <div class="bookmark-add-container">
-  <form
-    [formGroup]="bookmarkForm"
-    (submit)="createBookmark()"
-    class="form-inline mb-4"
-  >
+  <form [formGroup]="bookmarkForm" class="form-inline mb-4" name="myForm">
     <mat-form-field appearance="standard" required>
       <mat-label>Name *</mat-label>
-      <input matInput formControlName="name" placeholder="Name" />
+      <input matInput formControlName="name" name="name" placeholder="Name" />
       <mat-error *ngIf="bookmarkForm.controls['name'].errors?.required"
         >Mandatory Field</mat-error
       >
@@ -32,7 +28,7 @@
     </mat-form-field>
     <button
       mat-stroked-button
-      type="submit"
+      (click)="createBookmark()"
       [disabled]="bookmarkForm.invalid"
       color="primary"
     >

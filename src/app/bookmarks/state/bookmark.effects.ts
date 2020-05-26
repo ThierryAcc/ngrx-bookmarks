@@ -13,18 +13,10 @@ import { Bookmark } from "../bookmark.model";
 @Injectable()
 export class BookmarkEffect {
   constructor(
-    private actions$: Actions, // actions from the store
+    private actions$: Actions,
     private bookmarkService: BookmarkService
-  ) { }
+  ) {}
 
-  // register effect with effect decorator with the name
-  // loadBookmarks of type observable
-  // pipe: listen for action -> comm with server -> dispatch new action
-  // ofType type of action we want to listen for
-  // mergeMap: when action is dispatched map over action
-  // use service to get bookmark from the servicee
-  // map over bookmarks array and dispatch a new action passing the bookmarks
-  // ERROR: dispatch fail action
   @Effect()
   loadBookmarks$: Observable<Action> = this.actions$.pipe(
     ofType<bookmarkActions.LoadBookmarks>(
@@ -40,8 +32,6 @@ export class BookmarkEffect {
       )
     )
   );
-
-
 
   @Effect()
   createBookmark$: Observable<Action> = this.actions$.pipe(

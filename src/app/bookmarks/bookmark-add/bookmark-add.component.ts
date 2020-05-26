@@ -25,7 +25,7 @@ export class BookmarkAddComponent implements OnInit {
 
   ngOnInit() {
     this.bookmarkForm = this.fb.group({
-      name: ["", [Validators.required]],
+      name: ["", [Validators.required, this.noWhitespaceValidator]],
       url: [
         "http://",
         [
@@ -60,6 +60,7 @@ export class BookmarkAddComponent implements OnInit {
 
     this.store.dispatch(new bookmarkActions.CreateBookmark(newBookmark));
     this.bookmarkForm.reset();
-    //this.initializeFormGroup();
+
+    this.initializeFormGroup();
   }
 }
