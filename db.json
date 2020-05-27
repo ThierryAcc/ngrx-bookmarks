@@ -35,6 +35,12 @@
       "url": "http://blick.ch",
       "group": "Personal",
       "id": 55
+    },
+    {
+      "name": "Instagram",
+      "url": "http://instagram.com",
+      "group": "Personal",
+      "id": 61
     }
   ]
 }

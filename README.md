@@ -5,11 +5,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![](src/assets/images/NGRX-Bookmarks-1.PNG)
 ![](src/assets/images/NGRX-Bookmarks-2.PNG)
 
-## Application Overview
+## Getting Started
+
+Install dependencies with `npm install`.
 
 ## Development server
 
-Run `npm run start` to run the json-server on `http://localhost:3000/` and the client frontend on `http://localhost:4200/` concurrently.
+Run application `npm run start` to run the json-server on `http://localhost:3000/` and the client frontend on `http://localhost:4200/` concurrently.
 
 ## UI
 
@@ -22,3 +24,4 @@ NGRX for state management. Implemented load, create, delete actions. Reducer imp
 ## Further information
 
 Bookmarks are stored in the db.json file.
+Prettier for Code Formatting.

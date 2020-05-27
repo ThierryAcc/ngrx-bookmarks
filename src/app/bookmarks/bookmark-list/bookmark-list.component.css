@@ -10,3 +10,9 @@ table {
 .mat-table {
   margin-bottom: 40px;
 }
+
+.deleteIcon {
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+}

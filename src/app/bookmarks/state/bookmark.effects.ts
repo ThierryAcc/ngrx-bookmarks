@@ -1,14 +1,14 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core'
 
-import { Actions, Effect, ofType } from "@ngrx/effects";
-import { Action } from "@ngrx/store";
+import { Actions, Effect, ofType } from '@ngrx/effects'
+import { Action } from '@ngrx/store'
 
-import { Observable, of } from "rxjs";
-import { map, mergeMap, catchError } from "rxjs/operators";
+import { Observable, of } from 'rxjs'
+import { map, mergeMap, catchError } from 'rxjs/operators'
 
-import { BookmarkService } from "../bookmark.service";
-import * as bookmarkActions from "./bookmark.actions";
-import { Bookmark } from "../bookmark.model";
+import { BookmarkService } from '../bookmark.service'
+import * as bookmarkActions from './bookmark.actions'
+import { Bookmark } from '../bookmark.model'
 
 @Injectable()
 export class BookmarkEffect {
@@ -31,7 +31,7 @@ export class BookmarkEffect {
         catchError((err) => of(new bookmarkActions.LoadBookmarksFail(err)))
       )
     )
-  );
+  )
 
   @Effect()
   createBookmark$: Observable<Action> = this.actions$.pipe(
@@ -48,7 +48,7 @@ export class BookmarkEffect {
         catchError((err) => of(new bookmarkActions.CreateBookmarkFail(err)))
       )
     )
-  );
+  )
 
   @Effect()
   deleteBookmark$: Observable<Action> = this.actions$.pipe(
@@ -62,5 +62,5 @@ export class BookmarkEffect {
         catchError((err) => of(new bookmarkActions.DeleteBookmarkFail(err)))
       )
     )
-  );
+  )
 }
