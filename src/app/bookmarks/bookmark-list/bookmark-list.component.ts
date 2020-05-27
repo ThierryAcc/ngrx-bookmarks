@@ -22,7 +22,7 @@ export class BookmarkListComponent implements OnInit, OnDestroy {
   error$: Observable<String>
   dataSource = of(this.bookmarks$).pipe(delay(1000))
   displayedColumns: string[] = ['name', 'url', 'group']
-  @ViewChild(MatSort, { static: true }) sort: MatSort
+  // @ViewChild(MatSort, { static: true }) sort: MatSort
   destroyed$ = new Subject<boolean>()
 
   constructor(
