@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
 
 ![](src/assets/images/NGRX-Bookmarks-1.PNG)
+![](src/assets/images/NGRX-Bookmarks-2.PNG)
 
 ## Getting Started
 
